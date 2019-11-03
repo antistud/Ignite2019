@@ -44,6 +44,20 @@ steps:
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     flattenFolders: true
 
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '/deploy'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/deploy'
+    flattenFolders: true
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '/bin/debug'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/Utility'
+    flattenFolders: true
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
