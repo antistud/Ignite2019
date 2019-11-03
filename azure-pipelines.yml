@@ -52,11 +52,11 @@ steps:
     flattenFolders: true
 
 - task: CopyFiles@2
+  displayName: Copy Utility
   inputs:
-    SourceFolder: '$(Build.ArtifactStagingDirectory)\src\PokerLeagueManager.Utilities\bin\$(BuildConfiguration)'
+    SourceFolder: '$(Build.SourcesDirectory)\src\PokerLeagueManager.Utilities\bin\$(BuildConfiguration)'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)\Utility'
-    flattenFolders: true
 
 - task: PublishBuildArtifacts@1
   inputs:
