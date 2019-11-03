@@ -46,16 +46,16 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '/deploy'
+    SourceFolder: '$(Build.SourcesDirectory)\deploy'
     Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/deploy'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)\deploy'
     flattenFolders: true
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '/bin/debug'
+    SourceFolder: '$(Build.SourcesDirectory)\bin\debug'
     Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/Utility'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)\Utility'
     flattenFolders: true
 
 - task: PublishBuildArtifacts@1
