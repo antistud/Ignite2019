@@ -53,7 +53,7 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(Build.SourcesDirectory)\bin\debug'
+    SourceFolder: '$(Build.SourcesDirectory)\src\PokerLeagueManager.Utilties\bin\Debug'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)\Utility'
     flattenFolders: true
